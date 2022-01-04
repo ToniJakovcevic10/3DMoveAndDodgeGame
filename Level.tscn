@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -12,6 +12,9 @@ extents = Vector3( 15, 1, 15 )
 
 [sub_resource type="CubeMesh" id=4]
 size = Vector3( 30, 2, 30 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.0745098, 0.827451, 0.223529, 1 )
 
 [node name="Level" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239024, -0.0178113, 0 )
@@ -39,7 +42,7 @@ shape = SubResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 4 )
-material/0 = null
+material/0 = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02819, 0 )
